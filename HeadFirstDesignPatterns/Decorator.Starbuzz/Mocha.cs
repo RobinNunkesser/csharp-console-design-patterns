@@ -1,19 +1,12 @@
 using System;
 
-namespace HeadFirstDesignPatterns.Decorator.Starbuzz;
+namespace Decorator.Starbuzz;
 
 /// <summary>
 ///     Summary description for Mocha.
 /// </summary>
-public class Mocha : CondimentDecorator
+public class Mocha(Beverage beverage) : CondimentDecorator
 {
-    private readonly Beverage beverage;
-
-    public Mocha(Beverage beverage)
-    {
-        this.beverage = beverage;
-    }
-
     public override string GetDescription()
     {
         return beverage.GetDescription() + ", Mocha";
@@ -26,19 +19,12 @@ public class Mocha : CondimentDecorator
 
     private double GetSize(BeverageSize size)
     {
-        switch (size)
+        return size switch
         {
-            case BeverageSize.TALL:
-                return Convert.ToDouble(",10") +
-                       beverage.Cost();
-            case BeverageSize.GRANDE:
-                return Convert.ToDouble(",15") +
-                       beverage.Cost();
-            case BeverageSize.VENTI:
-                return Convert.ToDouble(",20") +
-                       beverage.Cost();
-            default:
-                return .20;
-        }
+            BeverageSize.Tall => Convert.ToDouble(",10") + beverage.Cost(),
+            BeverageSize.Grande => Convert.ToDouble(",15") + beverage.Cost(),
+            BeverageSize.Venti => Convert.ToDouble(",20") + beverage.Cost(),
+            _ => .20
+        };
     }
 }

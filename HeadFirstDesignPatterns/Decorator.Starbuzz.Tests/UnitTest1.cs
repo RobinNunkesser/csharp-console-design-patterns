@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace HeadFirstDesignPatterns.Decorator.Starbuzz.Tests;
+namespace Decorator.Starbuzz.Tests;
 
 public class Tests
 {
@@ -21,7 +21,7 @@ public class Tests
     [Test]
     public void TestExpressoWithSize()
     {
-        var beverageSize = BeverageSize.GRANDE;
+        const BeverageSize beverageSize = BeverageSize.Grande;
         Beverage beverage = new Expresso();
         beverage.Size = beverageSize;
         beverage = new Mocha(beverage);

@@ -1,24 +1,17 @@
-using System;
+namespace Decorator.Starbuzz;
 
-namespace HeadFirstDesignPatterns.Decorator.Starbuzz
+/// <summary>
+///     Summary description for HouseBlend.
+/// </summary>
+public class HouseBlend : Beverage
 {
-	/// <summary>
-	/// Summary description for HouseBlend.
-	/// </summary>
-	public class HouseBlend : Beverage
-	{
-		public HouseBlend()
-		{}
+    public override double Cost()
+    {
+        return .89;
+    }
 
-		public override double Cost()
-		{
-			return .89;
-		}
-
-		public override string GetDescription()
-		{
-			return "House Blend Coffee";
-		}
-
-	}
+    public override string GetDescription()
+    {
+        return "House Blend Coffee";
+    }
 }

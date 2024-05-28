@@ -1,31 +1,16 @@
-using System;
+namespace Decorator.Starbuzz;
 
-namespace HeadFirstDesignPatterns.Decorator.Starbuzz
+/// <summary>
+///     Summary description for Beverage.
+/// </summary>
+public abstract class Beverage
 {
-	/// <summary>
-	/// Summary description for Beverage.
-	/// </summary>
-	public abstract class Beverage
-	{
-		private BeverageSize size;
+    public BeverageSize Size { get; set; }
 
-		public virtual string GetDescription()
-		{
-			return "Unknown Beverage";
-		}
+    public virtual string GetDescription()
+    {
+        return "Unknown Beverage";
+    }
 
-		public BeverageSize Size
-		{
-			get
-			{
-				return size;
-			}
-			set
-			{
-				size = value;
-			}
-		}
-
-		public abstract double Cost();
-	}
+    public abstract double Cost();
 }

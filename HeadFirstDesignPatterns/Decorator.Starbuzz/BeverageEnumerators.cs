@@ -1,14 +1,11 @@
-using System;
+namespace Decorator.Starbuzz;
 
-namespace HeadFirstDesignPatterns.Decorator.Starbuzz
+/// <summary>
+///     Summary description for BeverageSize Enumerator.
+/// </summary>
+public enum BeverageSize
 {
-	/// <summary>
-	/// Summary description for BeverageSize Enumerator.
-	/// </summary>
-	public enum BeverageSize
-	{
-		TALL,
-		GRANDE,
-		VENTI
-	}
+    Tall,
+    Grande,
+    Venti
 }

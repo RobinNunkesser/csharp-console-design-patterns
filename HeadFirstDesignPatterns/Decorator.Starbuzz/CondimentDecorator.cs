@@ -1,13 +1,8 @@
-using System;
+namespace Decorator.Starbuzz;
 
-namespace HeadFirstDesignPatterns.Decorator.Starbuzz
+/// <summary>
+///     Summary description for CondimentDecorator.
+/// </summary>
+public abstract class CondimentDecorator : Beverage
 {
-	/// <summary>
-	/// Summary description for CondimentDecorator.
-	/// </summary>
-	public abstract class CondimentDecorator : Beverage
-	{
-		public CondimentDecorator()
-		{}
-	}
 }
