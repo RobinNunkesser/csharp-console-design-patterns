@@ -1,54 +1,49 @@
 using System.Collections;
 
-namespace HeadFirstDesignPatterns.Observer.WeatherData
+namespace Observer.WeatherData;
+
+/// <summary>
+///     Summary description for WeatherData.
+/// </summary>
+public class WeatherData : ISubject
 {
-    /// <summary>
-    /// Summary description for WeatherData.
-    /// </summary>
-    public class WeatherData : ISubject
+    private readonly ArrayList _observers = new();
+    private float _humidity;
+    private float _pressure;
+    private float _temperature;
+
+    private void MeasurementsChanged()
     {
-        private float humidity;
-        private ArrayList observers;
-        private float pressure;
-        private float temperature;
-
-        public WeatherData()
-        {
-            observers = new ArrayList();
-        }
-
-        public void MeasurementsChanged() => NotifyObserver();
-
-        public void SetMeasurements(float temperature, float humidity,
-            float pressure)
-        {
-            this.temperature = temperature;
-            this.humidity = humidity;
-            this.pressure = pressure;
-            MeasurementsChanged();
-        }
-
-        #region ISubject Members
-
-        public void RegisterObserver(IObserver o) => observers.Add(o);
-
-        public void RemoveObserver(IObserver o)
-        {
-            int i = observers.IndexOf(o);
-            if (i >= 0)
-            {
-                observers.Remove(o);
-            }
-        }
-
-        public void NotifyObserver()
-        {
-            foreach (IObserver observer in observers)
-            {
-                observer.Update(temperature, humidity, pressure);
-            }
-        }
-
-        #endregion
+        NotifyObserver();
     }
+
+    public void SetMeasurements(float temperature, float humidity,
+        float pressure)
+    {
+        _temperature = temperature;
+        _humidity = humidity;
+        _pressure = pressure;
+        MeasurementsChanged();
+    }
+
+    #region ISubject Members
+
+    public void RegisterObserver(IObserver o)
+    {
+        _observers.Add(o);
+    }
+
+    public void RemoveObserver(IObserver o)
+    {
+        var i = _observers.IndexOf(o);
+        if (i >= 0) _observers.Remove(o);
+    }
+
+    public void NotifyObserver()
+    {
+        foreach (IObserver observer in _observers)
+            observer.Update(_temperature, _humidity, _pressure);
+    }
+
+    #endregion
 }

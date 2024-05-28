@@ -1,4 +1,4 @@
-namespace HeadFirstDesignPatterns.Strategy.Duck
+namespace Strategy.Duck
 {
     /// <summary>
     /// IFlyBehavior interface for flying behaviors

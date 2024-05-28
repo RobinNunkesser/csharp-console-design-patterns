@@ -1,10 +1,9 @@
-namespace HeadFirstDesignPatterns.Observer.WeatherData
+namespace Observer.WeatherData;
+
+/// <summary>
+///     IObserver
+/// </summary>
+public interface IObserver
 {
-    /// <summary>
-    /// IObserver
-    /// </summary>
-    public interface IObserver
-    {
-        void Update(float temperature, float humidity, float pressure);
-    }
+    void Update(float temperature, float humidity, float pressure);
 }

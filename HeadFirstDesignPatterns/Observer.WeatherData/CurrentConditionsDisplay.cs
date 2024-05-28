@@ -1,38 +1,39 @@
-namespace HeadFirstDesignPatterns.Observer.WeatherData
+namespace Observer.WeatherData;
+
+/// <summary>
+///     Summary description for CurrentConditionsDisplay.
+/// </summary>
+public class CurrentConditionsDisplay : IObserver, IDisplayElement
 {
-    /// <summary>
-    /// Summary description for CurrentConditionsDisplay.
-    /// </summary>
-    public class CurrentConditionsDisplay : IObserver, IDisplayElement
+    private float _humidity;
+    private float _pressure;
+    private float _temperature;
+    private ISubject _weatherData;
+
+    public CurrentConditionsDisplay(ISubject weatherData)
     {
-        private float humidity;
-        private float pressure;
-        private float temperature;
-        private ISubject weatherData;
-
-        public CurrentConditionsDisplay(ISubject weatherData)
-        {
-            this.weatherData = weatherData;
-            weatherData.RegisterObserver(this);
-        }
-
-        #region IDisplayElement Members
-
-        public object Display() =>
-            "Current conditions: " + temperature + "F degrees and " +
-            humidity + "% humidity";
-
-        #endregion
-
-        #region IObserver Members
-
-        public void Update(float temperature, float humidity, float pressure)
-        {
-            this.temperature = temperature;
-            this.humidity = humidity;
-            this.pressure = pressure;
-        }
-
-        #endregion
+        _weatherData = weatherData;
+        weatherData.RegisterObserver(this);
     }
+
+    #region IDisplayElement Members
+
+    public object Display()
+    {
+        return "Current conditions: " + _temperature + "F degrees and " +
+               _humidity + "% humidity";
+    }
+
+    #endregion
+
+    #region IObserver Members
+
+    public void Update(float temperature, float humidity, float pressure)
+    {
+        _temperature = temperature;
+        _humidity = humidity;
+        _pressure = pressure;
+    }
+
+    #endregion
 }

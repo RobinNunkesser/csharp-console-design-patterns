@@ -1,10 +1,9 @@
-namespace HeadFirstDesignPatterns.Observer.WeatherData
+namespace Observer.WeatherData;
+
+/// <summary>
+///     Summary description for IDisplayElement.
+/// </summary>
+public interface IDisplayElement
 {
-    /// <summary>
-    /// Summary description for IDisplayElement.
-    /// </summary>
-    public interface IDisplayElement
-    {
-        object Display();
-    }
+    object Display();
 }

@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace HeadFirstDesignPatterns.Strategy.Duck.Tests
+namespace Strategy.Duck.Tests
 {
     public class Tests
     {
