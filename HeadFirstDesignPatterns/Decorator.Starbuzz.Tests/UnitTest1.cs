@@ -26,7 +26,7 @@ public class Tests
         beverage.Size = beverageSize;
         beverage = new Mocha(beverage);
         beverage.Size = beverageSize;
-        Assert.AreEqual("Expresso, Mocha $1.9",
+        Assert.AreEqual("Expresso, Mocha $1,9",
             beverage.GetDescription() + " $" + beverage.Cost());
     }
 
@@ -40,7 +40,7 @@ public class Tests
         Beverage beverage = new HouseBlend();
         beverage = new Mocha(beverage);
         beverage = new SteamedMilk(beverage);
-        Assert.AreEqual("House Blend Coffee, Mocha, Steamed Milk $1.09",
+        Assert.AreEqual("House Blend Coffee, Mocha, Steamed Milk $1,09",
             beverage.GetDescription() + " $" + beverage.Cost());
     }
 
@@ -54,7 +54,7 @@ public class Tests
         Beverage beverage = new DarkRoast();
         beverage = new Mocha(beverage);
         beverage = new Soy(beverage);
-        Assert.AreEqual("Dark Roast Coffee, Mocha, Soy $1.34",
+        Assert.AreEqual("Dark Roast Coffee, Mocha, Soy $1,34",
             beverage.GetDescription() + " $" + beverage.Cost());
     }
 
