@@ -1,24 +1,16 @@
-namespace HeadFirstDesignPatterns.Command.RemoteControl
+namespace Command.RemoteControl;
+
+/// <summary>
+///     Summary description for GarageDoorOpenCommand.
+/// </summary>
+public class GarageDoorUpCommand(GarageDoor garageDoor) : ICommand
 {
-    /// <summary>
-    /// Summary description for GarageDoorOpenCommand.
-    /// </summary>
-    public class GarageDoorUpCommand : Command
+    #region Command Members
+
+    public object Execute()
     {
-        GarageDoor garageDoor;
-
-        public GarageDoorUpCommand(GarageDoor garageDoor)
-        {
-            this.garageDoor = garageDoor;
-        }
-
-        #region Command Members
-
-        public object Execute()
-        {
-            return garageDoor.Up();
-        }
-
-        #endregion
+        return garageDoor.Up();
     }
+
+    #endregion
 }

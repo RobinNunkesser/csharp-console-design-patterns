@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace HeadFirstDesignPatterns.Factory.PizzaStore.Tests
+namespace Factory.PizzaStore.Tests
 {
     public class Tests
     {
@@ -10,12 +10,12 @@ namespace HeadFirstDesignPatterns.Factory.PizzaStore.Tests
         {
             PizzaStore nyStore =
                 new NYPizzaStore();
-            Pizza pizza = nyStore.OrderPizza("cheese");
-            string pizzaPrepareReturn = "Preparing NY Style Sauce and Cheese Pizza\n" +
-                "Tossing Thin Crust Dough\n" +
-                "Adding Martinara Sauce\n" +
-                "Adding toppings:\n" +
-                "\tGreated Reggiano Cheese\n";
+            var pizza = nyStore.OrderPizza("cheese");
+            const string pizzaPrepareReturn = "Preparing NY Style Sauce and Cheese Pizza\n" +
+                                              "Tossing Thin Crust Dough\n" +
+                                              "Adding Martinara Sauce\n" +
+                                              "Adding toppings:\n" +
+                                              "\tGreated Reggiano Cheese\n";
 
             Assert.AreEqual(pizzaPrepareReturn, pizza.Prepare());
             Assert.AreEqual("Bake for 25 minutes at 350 \n", pizza.Bake());
@@ -29,15 +29,15 @@ namespace HeadFirstDesignPatterns.Factory.PizzaStore.Tests
         [Test]
         public void TestChicagoStyleCheesePizza()
         {
-            HeadFirstDesignPatterns.Factory.PizzaStore.PizzaStore chicagoStore =
+            PizzaStore chicagoStore =
                 new ChicagoPizzaStore();
-            Pizza pizza = chicagoStore.OrderPizza("cheese");
+            var pizza = chicagoStore.OrderPizza("cheese");
 
-            string pizzaPrepareReturn = "Preparing Chicago Style Deep Dish Cheese Pizza\n" +
-                "Tossing Extra Thick Crust Dough\n" +
-                "Adding Plum Tomato Sauce\n" +
-                "Adding toppings:\n" +
-                "\tShredded Mozzarella Cheese\n";
+            const string pizzaPrepareReturn = "Preparing Chicago Style Deep Dish Cheese Pizza\n" +
+                                              "Tossing Extra Thick Crust Dough\n" +
+                                              "Adding Plum Tomato Sauce\n" +
+                                              "Adding toppings:\n" +
+                                              "\tShredded Mozzarella Cheese\n";
 
             Assert.AreEqual(pizzaPrepareReturn, pizza.Prepare());
             Assert.AreEqual("Bake for 25 minutes at 350 \n", pizza.Bake());

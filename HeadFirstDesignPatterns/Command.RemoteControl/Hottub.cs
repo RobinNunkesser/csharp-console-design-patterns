@@ -1,85 +1,60 @@
-namespace HeadFirstDesignPatterns.Command.RemoteControl
+namespace Command.RemoteControl;
+
+/// <summary>
+///     Summary description for Hottub.
+/// </summary>
+public abstract class Hottub
 {
-    /// <summary>
-    /// Summary description for Hottub.
-    /// </summary>
-    public class Hottub
+    private bool _on;
+    private int _temperature;
+
+    public bool On()
     {
-        bool on;
-        int temperature;
+        _on = true;
+        return _on;
+    }
 
-        public Hottub()
-        {
-        }
+    public bool Off()
+    {
+        _on = false;
+        return _on;
+    }
 
-        public bool On()
-        {
-            on = true;
-            return on;
-        }
+    public string BubblesOn()
+    {
+        return _on ? "Hottub is bubbling!" : null;
+    }
 
-        public bool Off()
-        {
-            on = false;
-            return on;
-        }
+    public string BubblesOff()
+    {
+        return _on ? "Hottub is not bubbling" : null;
+    }
 
-        public string BubblesOn()
-        {
-            if (on)
-            {
-                return "Hottub is bubbling!";
-            }
+    public string JetsOn()
+    {
+        return _on ? "Hottub jets are on" : null;
+    }
 
-            return null;
-        }
+    public string JetsOff()
+    {
+        return _on ? "Hottub jets are off" : null;
+    }
 
-        public string BubblesOff()
-        {
-            if (on)
-            {
-                return "Hottub is not bubbling";
-            }
+    public int SetTemperature(int temperature)
+    {
+        _temperature = temperature;
+        return temperature;
+    }
 
-            return null;
-        }
+    public string Heat()
+    {
+        _temperature = 105;
+        return "Hottub is heating to a steaming 105 degrees";
+    }
 
-        public string JetsOn()
-        {
-            if (on)
-            {
-                return "Hottub jets are on";
-            }
-
-            return null;
-        }
-
-        public string JetsOff()
-        {
-            if (on)
-            {
-                return "Hottub jets are off";
-            }
-
-            return null;
-        }
-
-        public int SetTemperature(int temperature)
-        {
-            this.temperature = temperature;
-            return temperature;
-        }
-
-        public string Heat()
-        {
-            temperature = 105;
-            return "Hottub is heating to a steaming 105 degrees";
-        }
-
-        public string Cool()
-        {
-            temperature = 98;
-            return "Hottub is cooling to 98 degrees";
-        }
+    public string Cool()
+    {
+        _temperature = 98;
+        return "Hottub is cooling to 98 degrees";
     }
 }

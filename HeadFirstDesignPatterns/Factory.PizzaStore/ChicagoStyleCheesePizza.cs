@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
-
-namespace HeadFirstDesignPatterns.Factory.PizzaStore
+namespace Factory.PizzaStore
 {
 	/// <summary>
 	/// Summary description for ChicagoStyleCheesePizza.
@@ -11,11 +8,11 @@ namespace HeadFirstDesignPatterns.Factory.PizzaStore
 		#region Constructor
 		public ChicagoStyleCheesePizza()
 		{
-			name = "Chicago Style Deep Dish Cheese Pizza";
-			dough = "Extra Thick Crust Dough";
-			sauce = "Plum Tomato Sauce";
+			Name = "Chicago Style Deep Dish Cheese Pizza";
+			Dough = "Extra Thick Crust Dough";
+			Sauce = "Plum Tomato Sauce";
 
-			toppings.Add("Shredded Mozzarella Cheese");
+			Toppings.Add("Shredded Mozzarella Cheese");
 		}
 		#endregion//Constructor
 

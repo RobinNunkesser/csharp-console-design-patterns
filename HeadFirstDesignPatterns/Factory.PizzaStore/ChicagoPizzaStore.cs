@@ -1,6 +1,4 @@
-using System;
-
-namespace HeadFirstDesignPatterns.Factory.PizzaStore
+namespace Factory.PizzaStore
 {
 	/// <summary>
 	/// Summary description for ChicagoPizzaStore.
@@ -15,11 +13,7 @@ namespace HeadFirstDesignPatterns.Factory.PizzaStore
 		#region CreatePizza
 		protected override Pizza CreatePizza(string type)
 		{
-			if(type.Equals("cheese"))
-			{
-				return new ChicagoStyleCheesePizza();
-			}
-			else return null;
+			return type.Equals("cheese") ? new ChicagoStyleCheesePizza() : null;
 		}
 		#endregion//CreatePizza
 	}

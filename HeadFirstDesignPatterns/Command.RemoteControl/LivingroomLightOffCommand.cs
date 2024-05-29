@@ -1,24 +1,16 @@
-namespace HeadFirstDesignPatterns.Command.RemoteControl
+namespace Command.RemoteControl;
+
+/// <summary>
+///     Summary description for LightOnCommand.
+/// </summary>
+public class LivingroomLightOffCommand(Light light) : ICommand
 {
-    /// <summary>
-    /// Summary description for LightOnCommand.
-    /// </summary>
-    public class LivingroomLightOffCommand : Command
+    #region Command Members
+
+    public object Execute()
     {
-        Light light;
-
-        public LivingroomLightOffCommand(Light light)
-        {
-            this.light = light;
-        }
-
-        #region Command Members
-
-        public object Execute()
-        {
-            return light.Off();
-        }
-
-        #endregion
+        return light.Off();
     }
+
+    #endregion
 }

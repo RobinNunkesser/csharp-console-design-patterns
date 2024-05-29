@@ -1,25 +1,20 @@
-namespace HeadFirstDesignPatterns.Command.RemoteControl
+namespace Command.RemoteControl;
+
+/// <summary>
+///     Summary description for SimpleRemoteControl
+/// </summary>
+public class SimpleRemoteControl
 {
-    /// <summary>
-    /// Summary description for SimpleRemoteControl
-    /// </summary>
-    public class SimpleRemoteControl
+    private ICommand _slot;
+
+    public object SetCommand(ICommand command)
     {
-        Command slot;
+        _slot = command;
+        return _slot;
+    }
 
-        public SimpleRemoteControl()
-        {
-        }
-
-        public object SetCommand(Command command)
-        {
-            slot = command;
-            return slot;
-        }
-
-        public object ButtonWasPressed()
-        {
-            return slot.Execute();
-        }
+    public object ButtonWasPressed()
+    {
+        return _slot.Execute();
     }
 }

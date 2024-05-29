@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
-
-namespace HeadFirstDesignPatterns.Factory.PizzaStore
+namespace Factory.PizzaStore
 {
 	/// <summary>
 	/// Summary description for NYStyleCheesePizza.
@@ -11,11 +8,11 @@ namespace HeadFirstDesignPatterns.Factory.PizzaStore
 		#region Constructor
 		public NYStyleCheesePizza()
 		{
-			name = "NY Style Sauce and Cheese Pizza";
-			dough = "Thin Crust Dough";
-			sauce = "Martinara Sauce";
+			Name = "NY Style Sauce and Cheese Pizza";
+			Dough = "Thin Crust Dough";
+			Sauce = "Martinara Sauce";
 
-			toppings.Add("Greated Reggiano Cheese");
+			Toppings.Add("Greated Reggiano Cheese");
 		}
 		#endregion
 	}

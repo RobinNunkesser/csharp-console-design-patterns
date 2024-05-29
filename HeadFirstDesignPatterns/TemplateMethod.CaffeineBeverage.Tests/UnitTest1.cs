@@ -1,12 +1,13 @@
 using System.Text;
+using HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage;
 using NUnit.Framework;
 
-namespace HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage.Tests
+namespace TemplateMethod.CaffeineBeverage.Tests
 {
     public class Tests
     {
         #region Members
-        Tea tea;
+        Tea _tea;
         Coffee coffee;
         CoffeeWithHook coffeeWithHook;
         TeaWithHook teaWithHook;
@@ -21,7 +22,7 @@ namespace HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage.Tests
         #region Init()
         public Tests()
         {
-            tea = new Tea();
+            _tea = new Tea();
             coffee = new Coffee();
             coffeeWithHook = new CoffeeWithHook();
             teaWithHook = new TeaWithHook();
@@ -37,7 +38,7 @@ namespace HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage.Tests
         #region TestCleanup Dispose()
         public void Dispose()
         {
-            tea = null;
+            _tea = null;
             coffee = null;
             coffeeWithHook = null;
             teaWithHook = null;
@@ -58,7 +59,7 @@ namespace HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage.Tests
             teaResult.Append("Steeping the tea\n");
             teaResult.Append("Pouring into cup\n");
             teaResult.Append("Adding lemon\n");
-            Assert.AreEqual(teaResult.ToString(), tea.PrepareRecipe());
+            Assert.AreEqual(teaResult.ToString(), _tea.PrepareRecipe());
         }
         #endregion//TestTea
 

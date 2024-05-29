@@ -1,40 +1,32 @@
-namespace HeadFirstDesignPatterns.Command.RemoteControl
+namespace Command.RemoteControl;
+
+/// <summary>
+///     Summary description for GarageDoor.
+/// </summary>
+public class GarageDoor(string location)
 {
-    /// <summary>
-    /// Summary description for GarageDoor.
-    /// </summary>
-    public class GarageDoor
+    public string Up()
     {
-        string location;
+        return "Garage door is up";
+    }
 
-        public GarageDoor(string location)
-        {
-            this.location = location;
-        }
+    public string Down()
+    {
+        return "Garage door is down";
+    }
 
-        public string Up()
-        {
-            return "Garage door is up";
-        }
+    public string Stop()
+    {
+        return "Garage door movement is stopped";
+    }
 
-        public string Down()
-        {
-            return "Garage door is down";
-        }
+    public string LightOn()
+    {
+        return "Garage door light is on";
+    }
 
-        public string Stop()
-        {
-            return "Garage door movement is stopped";
-        }
-
-        public string LightOn()
-        {
-            return "Garage door light is on";
-        }
-
-        public string LightOff()
-        {
-            return "Garage door light is off";
-        }
+    public string LightOff()
+    {
+        return "Garage door light is off";
     }
 }

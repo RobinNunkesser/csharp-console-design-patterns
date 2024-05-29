@@ -1,21 +1,16 @@
-namespace HeadFirstDesignPatterns.Command.RemoteControl
+namespace Command.RemoteControl;
+
+/// <summary>
+///     Summary description for NoCommand.
+/// </summary>
+public class NoCommand : ICommand
 {
-    /// <summary>
-    /// Summary description for NoCommand.
-    /// </summary>
-    public class NoCommand : Command
+    #region Command Members
+
+    public object Execute()
     {
-        public NoCommand()
-        {
-        }
-
-        #region Command Members
-
-        public object Execute()
-        {
-            return null;
-        }
-
-        #endregion
+        return null;
     }
+
+    #endregion
 }

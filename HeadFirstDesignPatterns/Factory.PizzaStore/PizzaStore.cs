@@ -1,6 +1,4 @@
-using System;
-
-namespace HeadFirstDesignPatterns.Factory.PizzaStore
+namespace Factory.PizzaStore
 {
 	/// <summary>
 	/// Summary description for PizzaStore.
@@ -8,16 +6,15 @@ namespace HeadFirstDesignPatterns.Factory.PizzaStore
 	public abstract class PizzaStore
 	{
 		#region Constructor
-		public PizzaStore()
+
+		protected PizzaStore()
 		{}
 		#endregion//Constructor
 
 		#region OrderPizza
 		public Pizza OrderPizza(string type)
 		{
-			Pizza pizza;
-			
-			pizza = CreatePizza(type);
+			var pizza = CreatePizza(type);
 
 			pizza.Prepare();
 			pizza.Bake();

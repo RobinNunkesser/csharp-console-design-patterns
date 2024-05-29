@@ -1,8 +1,7 @@
-using System;
 using System.Collections;
 using System.Text;
 
-namespace HeadFirstDesignPatterns.Factory.PizzaStore
+namespace Factory.PizzaStore
 {
 	/// <summary>
 	/// Summary description for Pizza.
@@ -10,28 +9,29 @@ namespace HeadFirstDesignPatterns.Factory.PizzaStore
 	public abstract class Pizza
 	{
 		#region Members
-		protected string name;
-		protected string dough;
-		protected string sauce;
-		protected ArrayList toppings = new ArrayList();
+		protected string Name;
+		protected string Dough;
+		protected string Sauce;
+		protected readonly ArrayList Toppings = [];
 		#endregion//Members
 
 		#region Constructor
-		public Pizza()
+
+		protected Pizza()
 		{}
 		#endregion//Constructor
 
 		#region Prepare
 		public string Prepare()
 		{
-			StringBuilder sb = new StringBuilder();
+			var sb = new StringBuilder();
 
-			sb.Append("Preparing " + name + "\n");
-			sb.Append("Tossing " + dough + "\n");
-			sb.Append("Adding " + sauce + "\n");
+			sb.Append("Preparing " + Name + "\n");
+			sb.Append("Tossing " + Dough + "\n");
+			sb.Append("Adding " + Sauce + "\n");
 			sb.Append("Adding toppings:" + "\n");
 
-			foreach(string topping in toppings)
+			foreach(string topping in Toppings)
 			{
 				sb.Append("\t" + topping + "\n");
 			}
@@ -64,7 +64,7 @@ namespace HeadFirstDesignPatterns.Factory.PizzaStore
 		#region GetName
 		public string GetName()
 		{
-			return name;
+			return Name;
 		}
 		#endregion//GetName
 	}
