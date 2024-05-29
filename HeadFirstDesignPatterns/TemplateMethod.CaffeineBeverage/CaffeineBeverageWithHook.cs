@@ -1,7 +1,6 @@
-using System;
 using System.Text;
 
-namespace HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage
+namespace TemplateMethod.CaffeineBeverage
 {
 	/// <summary>
 	/// Summary description for CaffeineBeverageWithHook.
@@ -10,7 +9,7 @@ namespace HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage
 	{
 		public string PrepareRecipe()
 		{
-			StringBuilder sb = new StringBuilder();
+			var sb = new StringBuilder();
 
 			sb.Append(BoilWater());
 			sb.Append(Brew());
@@ -23,15 +22,15 @@ namespace HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage
 			return sb.ToString();
 		}
 
-		public abstract string Brew();
-		public abstract string AddCondiments();
+		protected abstract string Brew();
+		protected abstract string AddCondiments();
 
-		string BoilWater()
+		private string BoilWater()
 		{
 			return "Boiling water\n";
 		}
 
-		string PourInCup()
+		private string PourInCup()
 		{
 			return "Pouring into cup\n";
 		}

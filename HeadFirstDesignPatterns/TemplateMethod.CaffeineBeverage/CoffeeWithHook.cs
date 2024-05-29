@@ -1,7 +1,4 @@
-using System;
-using System.Configuration;
-
-namespace HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage
+namespace TemplateMethod.CaffeineBeverage
 {
 	/// <summary>
 	/// Summary description for CoffeeWithHook.
@@ -11,12 +8,12 @@ namespace HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage
 		public CoffeeWithHook()
 		{}
 
-		public override string Brew()
+		protected override string Brew()
 		{
 			return "Dripping coffee through filter\n";
 		}
 
-		public override string AddCondiments()
+		protected override string AddCondiments()
 		{
 			return "Adding sugar and milk\n";
 		}

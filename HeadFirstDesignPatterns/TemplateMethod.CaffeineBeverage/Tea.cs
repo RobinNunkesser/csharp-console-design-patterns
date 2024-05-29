@@ -1,6 +1,4 @@
-using System;
-
-namespace HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage
+namespace TemplateMethod.CaffeineBeverage
 {
 	/// <summary>
 	/// Summary description for Tea.
@@ -10,12 +8,12 @@ namespace HeadFirstDesignPatterns.TemplateMethod.CaffeineBeverage
 		public Tea()
 		{}
 
-		public override string Brew()
+		protected override string Brew()
 		{
 			return "Steeping the tea\n";
 		}
 
-		public override string AddCondiments()
+		protected override string AddCondiments()
 		{
 			return "Adding lemon\n";
 		}
